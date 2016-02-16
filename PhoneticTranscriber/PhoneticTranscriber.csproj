@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E180B165-3875-42E3-BFC7-7626B8D7F438}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PhoneticTranscriber</RootNamespace>
+    <AssemblyName>PhoneticTranscriber</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <IncludeAssemblyInPackage>False</IncludeAssemblyInPackage>
+    <AppFeaturePartId>{f73ec4bd-ebbf-4d84-bb93-43d333cb092d}</AppFeaturePartId>
+    <WspPartId>{5497837c-07e0-4abe-8b1a-f41aa5409083}</WspPartId>
+    <WorkflowPartId>{98aa6c0d-a188-4d51-8882-e94b7eda2c40}</WorkflowPartId>
+    <CspkgPartId>{6bada929-edb1-4926-bfac-0dd2abd1dae3}</CspkgPartId>
+    <SqlPackagePartId>{e88e74aa-abf6-4ca5-afa2-c2105ad3ec5d}</SqlPackagePartId>
+    <ProjectMode>OfficeApp</ProjectMode>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <MinimumOfficeToolsVersion>12.2</MinimumOfficeToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="PhoneticTranscriberManifest\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f3e4be62-3582-4488-ad67-1cbd3324cea1}</SharePointProjectItemId>
+    </None>
+    <Content Include="PhoneticTranscriberManifest\PhoneticTranscriber.xml">
+      <OpcRelationship>manifest-oemanifest</OpcRelationship>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PhoneticTranscriberWeb\PhoneticTranscriberWeb.csproj">
+      <Project>{ABF489E1-27E3-4423-ACC9-8BA49AF4A9D3}</Project>
+      <Name>PhoneticTranscriberWeb</Name>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <OutputItemType>SharePointWebProjectOutput</OutputItemType>
+      <RoleName>PhoneticTranscriberWeb</RoleName>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>
