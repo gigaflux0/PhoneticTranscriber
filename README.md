@@ -2,14 +2,9 @@
 Get and insert easily readable phonetic translations of English words in Microsoft Office apps.
 
 TODO:
-- Fix Cross-Origin-Resource-SHaring issue (fixable to doing a complete dictionary change, best looking candidate is wiktionary).
-- Convert translation case switches to hashtables.
-- Overwrite previously displayed result rather than concat to it.
 - Multi word support.
 - Word insertion button.
 - Auto-insertion tick box.
-- Proper error control.
-- Translation improvments.
 - Readability enhancements by implementing: 
         - syllable dash breaks, 
         - bolding stressed sounds, 
@@ -20,6 +15,11 @@ TODO:
 
 COMPLETED:
 - Entire prototype base to build upon.
+- Proper error control.
+- Translation improvments.
+- Fix Cross-Origin-Resource-SHaring issue (fixable to doing a complete dictionary change, best looking candidate is wiktionary).
+- Convert translation case switches to hashtables.
+- Overwrite previously displayed result rather than concat to it.
 
 
 SETUP:
