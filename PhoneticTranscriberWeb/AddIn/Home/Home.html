@@ -1,44 +1,47 @@
-﻿<!DOCTYPE html>
-<html>
+<!doctype html>
+<html ng-app="PhoneticTranscriber">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <title></title>
-    <script src="../../Scripts/jquery-1.9.1.js" type="text/javascript"></script>
-
     <link href="../../Content/Office.css" rel="stylesheet" type="text/css" />
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-
-    <!-- To enable offline debugging using a local reference to Office.js, use:                        -->
-    <!-- <script src="../../Scripts/Office/MicrosoftAjax.js" type="text/javascript"></script>  -->
-    <!-- <script src="../../Scripts/Office/1/office.js" type="text/javascript"></script>  -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
     <link href="../App.css" rel="stylesheet" type="text/css" />
     <script src="../App.js" type="text/javascript"></script>
-
     <link href="Home.css" rel="stylesheet" type="text/css" />
     <script src="Home.js" type="text/javascript"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <script src="../../Scripts/jquery-1.9.1.js" type="text/javascript"></script>
+    <title></title>
 </head>
 <body>
     <div id="content-header">
         <div class="padding">
-            <h1>Team 26-4-lyfe!!</h1>
+            <h1>Phonetic Transcriber</h1>
         </div>
     </div>
     <div id="content-main">
         <div class="padding">
-            <p><strong>Hi!, please make sure words are spelled correctly before transcribing!</strong></p>
-            <p><strong>Spell check forcer, possible dictionary change, multi word support, word insertion button, auto-insertion tick box, proper error control and multiple translation improvments to come in patch 0.482796-alpha</strong></p>
-            <p>Highlight the word and click:</p>
-            <button id="get-data-from-selection">Get phonetic</button>
-            <div id="ipaDiv"></div>
-            <div id="phoDiv"></div>
+            <div ng-controller="PhoneticTranscriberController as ptCont">
 
+                <p><strong>Display and insert phonetic transcriptions of English words.</strong></p>
+                <p><i>(Please check words are spelled correctly and only one word at a time is selected)</i></p>
+                <p>Right click a word or enter one below</p>
+
+                <form ng-submit="ptCont.getIpa()">
+                    <br><strong>Word to translate: </strong><input type="text" ng-model="theWord">
+                    <input class="btn-primary" type="submit" value="Submit">
+                </form>
+                <br><br><b>IPA translation: </b>{{ipaDiv}}<br><br>
+                <b>Phonetic translation: </b>{{phoDiv}}<br><br>
+
+                <form ng-submit="ptCont.insertPho()">
+                    <br><strong>Insert cursor selected words translation: </strong><input class="btn-primary" type="submit" value="Insert">
+                </form>
+            
+            </div>
             <p style="margin-top: 50px;">
-                <!--<div id="ipaDiv">IPA translation: </div>-->
-                <!--<a target="_blank" href="https://go.microsoft.com/fwlink/?LinkId=276812">Find more samples online...</a>-->
             </p>
         </div>
     </div>
 </body>
-</html>
+</html> 
